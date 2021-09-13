@@ -1,0 +1,24 @@
+<div fxLayout="row" fxLayoutWrap="wrap">
+        <br/>
+        <div class="center">
+            <div align="center">
+                <label style="font-size: large; font-style: bold;" class="font">PRODUCTS LIST</label>
+                <br/>
+                <input #product autocomplete="off" placeholder="New Product" style="border-radius: 30px; border-color: #DEDEDE;" >
+            </div>
+            <br/>
+            <div align="center">
+                <button class="pure-material-button-contained" (click)="addProductToList(product.value)">Add</button>
+            </div>
+        </div>
+        <br/>
+        <br/>
+        <div *ngFor = "let producto of listaProductos" class="center font" style="margin-bottom: 20px;">
+            <img  [src]="producto.image" height="25px" style="float: left; margin-right: 15px;">
+            <label>{{producto.title}}</label>
+            <label style="float: right">{{producto.price}}</label>
+            <br/>
+        </div>
+        <br/>
+        <div align="center" *ngIf="vacio" class="font" style="font-size: small;">Please, type the prodduct name before add</div>
+</div>
